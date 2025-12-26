@@ -32,7 +32,7 @@ echo                    **********************************************
 
 echo               :::::::: STATE BANK OF INDIA ( UNOFFICIAL KIOSK APPLICATION SETTINGS ) ::::::::
 echo .
-echo                          **** KDI ( WEST BENGAL ) ****
+echo                          **** KARANDIGHI ( WEST BENGAL ) ****
 echo.
 echo              :::::::: Developed by Binku Kumar Sinha (Pythomas) With The Help Of STACK-OVERFLOW ::::::::
 echo.
@@ -108,7 +108,7 @@ net Start MORPHO_Agent_Service
 
 net Start PinpadService
 
-net Start TapiSrv
+rem net Start TapiSrv
 
 ipconfig/flushdns
 pause 
@@ -123,7 +123,7 @@ net stop MORPHO_Agent_Service
 
 net stop PinpadService
 
-net stop TapiSrv
+rem net Start TapiSrv
 
 ipconfig/flushdns
 pause 
@@ -218,7 +218,7 @@ echo 		****Before Downloading The File Please Delete Old Downloaded File as Same
 echo.
 pause
 echo "Downloading PeriService_latest For You"
-powershell -command "Invoke-WebRequest https://kiosk.bank.sbi/gateway/downloads/PeriService_latest.zip -Outfile PeriService_latest.zip" 
+powershell -command "Invoke-WebRequesthttps://cspbctools.com/software/PeriServiceSetup_V1.1.82.zip -Outfile PeriService_latest.zip" 
 echo.
 echo "Downloading Done"
 pause
@@ -262,13 +262,13 @@ echo              :::::::::::::::::::::::::::::::::::::::::::::::::::
 
 REM echo		 ********** <<< FOR ALL KIND OF MICRO ATM DEVICE >>> **********
 
-echo                            * Restarting Telephony Service *
-echo                        *** FOR ALL KIND OF MICRO ATM DEVICE ***
-echo              :::::::::::::::::::::::::::::::::::::::::::::::::::
+rem echo                            * Restarting Telephony Service *
+rem echo                        *** FOR ALL KIND OF MICRO ATM DEVICE ***
+rem echo              :::::::::::::::::::::::::::::::::::::::::::::::::::
 
-net stop TapiSrv
-net start TapiSrv
-echo              :::::::::::::::::::::::::::::::::::::::::::::::::::
+rem net stop TapiSrv
+rem net start TapiSrv
+rem echo              :::::::::::::::::::::::::::::::::::::::::::::::::::
 
 echo                                 **** DONE **** 
 echo              :::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -369,8 +369,8 @@ del /f /s /q ".\Cache\*.*" ".\*Cookies*.*" ".\*History*.*"
 popd
 ipconfig/flushdns
 
-rem start chrome.exe https://kiosk.bank.sbi -incognito
-rem start chrome.exe https://kiosk.bank.sbi
+rem start chrome.exe https://kiosk.sbi.bank.in/ -incognito
+rem start chrome.exe https://kiosk.sbi.bank.in/
 
 rem echo ===============================================================
 rem echo .
@@ -415,7 +415,7 @@ echo Microsoft Edge history, autofill data, download history, and cache have bee
 
 taskkill /IM msedge.exe /F
 ipconfig/flushdns
-start microsoft-edge:https://kiosk.bank.sbi/
+start microsoft-edge:https://kiosk.sbi.bank.in/
 goto exit
 
 
@@ -442,9 +442,9 @@ rd /s /q "%LocalAppData%\Google\Chrome\User Data\Default\GPUCache" >nul 2>&1
 
 echo Google Chrome history and autofill data cleared.
 taskkill /F /IM chrome.exe > nul
-rem start chrome.exe https://kiosk.bank.sbi -incognito
+rem start chrome.exe https://kiosk.sbi.bank.in/ -incognito
 ipconfig/flushdns
-start chrome.exe https://kiosk.bank.sbi
+start chrome.exe https://kiosk.sbi.bank.in/
 goto exit
 
 
@@ -464,7 +464,7 @@ echo Mozilla Firefox history, autofill data, download history, and cache have be
 
 taskkill /IM firefox.exe /F
 ipconfig/flushdns
-start firefox.exe https://kiosk.bank.sbi/
+start firefox.exe https://kiosk.sbi.bank.in/
 goto exit
 
 
@@ -503,7 +503,7 @@ for /D %%i in ("%LOCALAPPDATA%\Microsoft\Edge\User Data\*") do RD /S /Q "%%i"
 
 erase "%LOCALAPPDATA%\Google\Chrome\User Data\*.*" /f /s /q
 
-for /D %%i in ("%LOCALAPPDATA%\Google\Chrome\User Data\*") do RD /S /Q "%%i"
+for /D %%i in ("%LOCALAPPDATA%\Google\Chrome\User Data\*") do RD /S /Q "%%i"a
 
 @rem Clear Firefox cache
 
